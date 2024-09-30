@@ -1,5 +1,5 @@
-//1. Kiran Yesley -kirany@nycstudent.net
-// Leilah Yik leilahy@nycstudent.net
+//1. Kiran Yesley -kirany@nycstudents.net
+// Leilah Yik leilahy@nycstudents.net
 public class ArrayMethods{
 
 public static void main(String[] args){
