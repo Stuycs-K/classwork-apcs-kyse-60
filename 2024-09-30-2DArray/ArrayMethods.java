@@ -21,10 +21,10 @@ public static void main(String[] args){
 // test cases for replaceNegative
   int [][] arr5 = {{1,-2,-3},{4,-5,6},{-7,9}};
   int [][] arr6 = {{-1,-2,7},{4,5,6},{}, {-1}};
-  replaceNegative( arr5)
-  replaceNegative( arr6)
-  System.out.println("Expected: [[1, 0, 0], [4, 1, 6], [0, 9]]  Obtained: " + arrToString(arr5);
-  System.out.println("Expected: [[1,0,7], [4,5,6], [], [0]]  Obtained: " + arrToString(arr6);
+  replaceNegative( arr5);
+  replaceNegative( arr6);
+  System.out.println("Expected: [[1, 0, 0], [4, 1, 6], [0, 9]]  Obtained: " + arrToString(arr5));
+  System.out.println("Expected: [[1,0,7], [4,5,6], [], [0]]  Obtained: " + arrToString(arr6));
 
 
 }
