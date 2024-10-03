@@ -6,26 +6,37 @@ public static void main(String[] args){
   int [][] arr1 = {{1,2,3},{4,5,6},{7,8,9}};
   int [][] arr2 = {{1,2,3,6,7},{4,5,6},{7,9}};
   int [][] arr3 = {{},{},{},{}};
+
 // test cases for arrToString for 2D arrays
+System.out.println("test cases for arrToString for 2d arrays");
   System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]  Obtained: " + arrToString(arr1));
   System.out.println("Expected: [[1, 2, 3, 6, 7], [4, 5, 6], [7, 9]]  Obtained: " + arrToString(arr2));
   System.out.println("Expected: [[], [], [], []]  Obtained: " + arrToString(arr3));
+
 //test cases for arr2DSum
+System.out.println("test cases for arr2DSum");
   System.out.println("Expected: 45  Obtained: " + arr2DSum(arr1));
   System.out.println("Expected: 50  Obtained: " + arr2DSum(arr2));
   System.out.println("Expected: 0   Obtained: " + arr2DSum(arr3));
+
 //test cases for swapRC
+System.out.println("test cases for swapRC");
   int [][] arr4 = {{1,2},{3,4},{5,6},{7,8}};
   System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]  Obtained: " + arrToString(swapRC(arr1)));
   System.out.println("Expected: [[1, 3, 5, 7], [2, 4, 6, 8]]  Obtained: " + arrToString(swapRC(arr4)));
+
 // test cases for replaceNegative
+System.out.println("test cases for replaceNegative");
   int [][] arr5 = {{1,-2,-3},{4,-5,6},{-7,9}};
   int [][] arr6 = {{-1,-2,7},{4,5,6},{}, {-1}};
   replaceNegative( arr5);
   replaceNegative( arr6);
   System.out.println("Expected: [[1, 0, 0], [4, 1, 6], [0, 9]]  Obtained: " + arrToString(arr5));
-  System.out.println("Expected: [[1,0,7], [4,5,6], [], [0]]  Obtained: " + arrToString(arr6));
+  System.out.println("Expected: [[1, 0, 7], [4, 5, 6], [], [0]]  Obtained: " + arrToString(arr6));
 
+// test cases for copy
+System.out.println("test cases for copy");
+  System.out.println("Original array: " + arrToString(arr1) + " New Array: " + arrToString(copy(arr1)) + " Same Array? " + arrToString(arr1).equals(arrToString(copy(arr1))) + " Different Array Adresses? " + (arr1 != copy(arr1)) );
 
 }
 //2. Copy your arrToString method from before.
@@ -99,7 +110,7 @@ public static int[][] swapRC(int[][]nums){
 public static void replaceNegative(int[][] vals){
   for (int i = 0; i < vals.length ; i++)
   {
-    for(int j =0 ; j< vals[i]; j++)
+    for(int j =0 ; j < vals[i].length; j++)
     {
       if (vals[i][j] < 0){
         if (i == j){
@@ -118,9 +129,23 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[] copyHelper(int[] nums){
+   int [] arr = new int [ nums.length];
+   for ( int i = 0; i < nums.length; i++){
+	arr[i] = nums[i];
+   }
+  return arr;
+}
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  int [][] arr = new int [nums.length][];
+  for (int i =0; i < nums.length; i++){
+	int [] subarr = new int [nums[i].length];
+	for (int j = 0; j < nums[i].length; j++){
+	  subarr[j] = nums[i][j];
+	}
+	arr[i] = subarr;
+   }
+  return arr;
+  }
 }
 
-
-}
