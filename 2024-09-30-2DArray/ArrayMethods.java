@@ -38,6 +38,10 @@ System.out.println("test cases for replaceNegative");
 System.out.println("test cases for copy");
   System.out.println("Original array: " + arrToString(arr1) + " New Array: " + arrToString(copy(arr1)) + " Same Array? " + arrToString(arr1).equals(arrToString(copy(arr1))) + " Different Array Adresses? " + (arr1 != copy(arr1)) );
 
+  System.out.println("Original array: " + arrToString(arr2) + " New Array: " + arrToString(copy(arr2)) + " Same Array? " + arrToString(arr2).equals(arrToString(copy(arr2))) + " Different Array Adresses? " + (arr2 != copy(arr2)) );
+
+  System.out.println("Original array: " + arrToString(arr3) + " New Array: " + arrToString(copy(arr3)) + " Same Array? " + arrToString(arr3).equals(arrToString(copy(arr3))) + " Different Array Adresses? " + (arr3 != copy(arr3)) );
+
 }
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
