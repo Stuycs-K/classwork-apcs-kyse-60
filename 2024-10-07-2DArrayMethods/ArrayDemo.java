@@ -1,4 +1,4 @@
-import java.util.Arrays;
+ import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
     //write your tests here!
@@ -11,12 +11,21 @@ public class ArrayDemo{
     int [][] arr2 = {{1,2,3,6,7},{4,5,6},{7,9}};
     int [][] arr3 = {{},{},{},{}};
     System.out.println("Test cases for arrToString");
-    System.out.println("Expected: " + Arrays.toString(arr0) + " Obtained: " + arrtoString(arr0) + " Are these the same? : " + arrtoString(arr0).equals(Arrays.toString(arr0)));
-    System.out.println("Expected: " + Arrays.toString(arr1) + " Obtained: " + arrtoString(arr1) + " Are these the same? : " + arrtoString(arr1).equals(Arrays.toString(arr1)));
-    System.out.println("Expected: " + Arrays.toString(arr2) + " Obtained: " + arrtoString(arr2) + " Are these the same? : " + arrtoString(arr2).equals(Arrays.toString(arr2)));
-    System.out.println("Expected: " + Arrays.toString(arr3) + " Obtained: " + arrtoString(arr3) + " Are these the same? : " + arrtoString(arr3).equals(Arrays.toString(arr3)));
-    System.out.println("Expected: " + Arrays.toString(arr4) + " Obtained: " + arrtoString(arr4) + " Are these the same? : " + arrtoString(arr4).equals(Arrays.toString(arr4)));
-
+    System.out.println("Expected: " + Arrays.toString(arr0) + " Obtained: " + arrToString(arr0) + " Are these the same? : " + arrToString(arr0).equals(Arrays.toString(arr0)));
+    System.out.println("Expected: " + Arrays.deepToString(arr1) + " Obtained: " + arrToString(arr1) + " Are these the same? : " + arrToString(arr1).equals(Arrays.toString(arr1)));
+    System.out.println("Expected: " + Arrays.deepToString(arr2) + " Obtained: " + arrToString(arr2) + " Are these the same? : " + arrToString(arr2).equals(Arrays.toString(arr2)));
+    System.out.println("Expected: " + Arrays.deepToString(arr3) + " Obtained: " + arrToString(arr3) + " Are these the same? : " + arrToString(arr3).equals(Arrays.toString(arr3)));
+    System.out.println("Expected: " + Arrays.toString(arr4) + " Obtained: " + arrToString(arr4) + " Are these the same? : " + arrToString(arr4).equals(Arrays.toString(arr4)));
+    int[][] arr5 = {{0,0,0}, {1,2,0}, {}};
+    int[][] arr6 = {{}, {1,0,0}, {2,4}};
+    System.out.println("Test cases for countZeros2D");
+    System.out.println("Expected: 0 Obtained: " + countZeros2D(arr1));
+    System.out.println("Expected: 0 Obtained: " + countZeros2D(arr3));
+    System.out.println("Expected: 0 Obtained: " + countZeros2D(arr2));
+    System.out.println("Expected: 4 Obtained: " + countZeros2D(arr5));
+    System.out.println("Expected: 2 Obtained: " + countZeros2D(arr6));
+    System.out.println("Test cases for ");
+    System.out.println("");
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -49,7 +58,13 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+    for (int i = 0; i < nums.length ; i++){
+      for ( int j = 0; j <nums[i].length; i++){
+        if (nums[i][j] == 0) count++ ;  
+      }
+    }
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
