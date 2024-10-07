@@ -5,6 +5,17 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+    int [] arr0 = {1,2,3,4};
+    int [] arr4 = {};
+    int [][] arr1 = {{1,2,3},{4,5,6},{7,8,9}};
+    int [][] arr2 = {{1,2,3,6,7},{4,5,6},{7,9}};
+    int [][] arr3 = {{},{},{},{}};
+    System.out.println("Test cases for arrToString");
+    System.out.println("Expected: " + Arrays.toString(arr0) + " Obtained: " + arrtoString(arr0) + " Are these the same? : " + arrtoString(arr0).equals(Arrays.toString(arr0)));
+    System.out.println("Expected: " + Arrays.toString(arr1) + " Obtained: " + arrtoString(arr1) + " Are these the same? : " + arrtoString(arr1).equals(Arrays.toString(arr1)));
+    System.out.println("Expected: " + Arrays.toString(arr2) + " Obtained: " + arrtoString(arr2) + " Are these the same? : " + arrtoString(arr2).equals(Arrays.toString(arr2)));
+    System.out.println("Expected: " + Arrays.toString(arr3) + " Obtained: " + arrtoString(arr3) + " Are these the same? : " + arrtoString(arr3).equals(Arrays.toString(arr3)));
+    System.out.println("Expected: " + Arrays.toString(arr4) + " Obtained: " + arrtoString(arr4) + " Are these the same? : " + arrtoString(arr4).equals(Arrays.toString(arr4)));
 
   }
 
@@ -99,7 +110,6 @@ public class ArrayDemo{
      }
     return arr;
     }
-  }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
