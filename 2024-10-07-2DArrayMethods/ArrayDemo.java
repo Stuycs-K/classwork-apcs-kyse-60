@@ -24,8 +24,10 @@ public class ArrayDemo{
     System.out.println("Expected: 0 Obtained: " + countZeros2D(arr2));
     System.out.println("Expected: 4 Obtained: " + countZeros2D(arr5));
     System.out.println("Expected: 2 Obtained: " + countZeros2D(arr6));
-    System.out.println("Test cases for ");
-    System.out.println("");
+    int[][] arr_0 = {{1, 2, 3, 4}};
+    System.out.println("Test cases for htmlTable");
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr></table> Obtained: " + htmlTable(arr_0) + " Are they the same? :" + "<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr></table>".equals(htmlTable(arr_0)));
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -60,7 +62,7 @@ public class ArrayDemo{
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for (int i = 0; i < nums.length ; i++){
-      for ( int j = 0; j <nums[i].length; i++){
+      for ( int j = 0; j <nums[i].length; j++){
         if (nums[i][j] == 0) count++ ;  
       }
     }
@@ -147,7 +149,20 @@ public class ArrayDemo{
   //   Note there is no whitespace in the string, it all one line with no spaces/tabs.
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
+  public static String htmlTablehelper(int[]nums){
+    String answer = "<tr>";
+    for (int i = 0; i < nums.length; i++)
+    {
+      answer = answer + "<td>" + nums[i] + "</td>";
+    } 
+    return answer + "</tr>";
+  }
+
   public static String htmlTable(int[][]nums){
-    return "";
+    String answer = "<table>";
+    for (int i = 0; i < nums.length; i++){
+      answer += htmlTablehelper(nums[i]);
+    }
+    return answer + "</table>";
   }
 }
