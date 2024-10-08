@@ -25,8 +25,14 @@ public class ArrayDemo{
     System.out.println("Expected: 4 Obtained: " + countZeros2D(arr5));
     System.out.println("Expected: 2 Obtained: " + countZeros2D(arr6));
     int[][] arr_0 = {{1, 2, 3, 4}};
+    int[][] arr_1 = {{1, 2}, {3}};
+    int[][] arr_2 = {{}, {}};
+    int[][] arr_3 = {{}, {3}};
     System.out.println("Test cases for htmlTable");
     System.out.println("Expected: <table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr></table> Obtained: " + htmlTable(arr_0) + " Are they the same? :" + "<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr></table>".equals(htmlTable(arr_0)));
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table> Obtained: " + htmlTable(arr_1) + " Are they the same? :" + "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>".equals(htmlTable(arr_1)));
+    System.out.println("Expected: <table><tr></tr><tr></tr></table> Obtained: " + htmlTable(arr_2) + " Are they the same? :" + "<table><tr></tr><tr></tr></table>".equals(htmlTable(arr_2)));
+    System.out.println("Expected: <table><tr></tr><tr><td>3</td></tr></table> Obtained: " + htmlTable(arr_3) + " Are they the same? :" + "<table><tr></tr><tr><td>3</td></tr></table>".equals(htmlTable(arr_3)));
 
   }
 
