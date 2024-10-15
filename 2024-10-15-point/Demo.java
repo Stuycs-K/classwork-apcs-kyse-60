@@ -28,5 +28,13 @@ public class Demo{
     System.out.println( distance(p1,p3)); //expect roughly 3.6055
     System.out.println( Point.distance(p1,p3));
     System.out.println( p1.distanceTo(p3));
+
+    Point p7 = new Point(4,1);
+    Point p8 = new Point(1,5);
+    System.out.println( distance(p7,p8)); //expect 5.0
+    System.out.println( Point.distance(p7,p8));
+    System.out.println( p7.distanceTo(p8));
+
+    
   }
 }
