@@ -36,7 +36,7 @@ public class Demo{
     System.out.println( p7.distanceTo(p8));
 
     Point eqp1 = new Point(0,0);
-    Point eqp2 = new Point(1/2, Math.sqrt(3)/2);
+    Point eqp2 = new Point(0.5, Math.sqrt(3)/2);
     Point eqp3 = new Point(1,0);
 
     System.out.println("first side: " + distance(eqp1,eqp2));
