@@ -14,6 +14,10 @@ public class ReadFile {
         System.out.println(input.nextLine());
         input.nextLine();
       }
+
+      while(input.hasNext("{")){
+        System.out.println(input.nextLine());
+      }
       input.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
