@@ -12,13 +12,19 @@ public class ReadFile {
       //CODE THAT SCANS THE FILE.
       while(input.hasNextLine()){
         System.out.println(input.nextLine());
-        input.nextLine();
-      }
-
-      while(input.hasNext("{")){
-        System.out.println(input.nextLine());
+        if(input.hasNextLine()) input.nextLine();
       }
       input.close();//releases the file from your program
+
+System.out.println("-------------------");
+      Scanner input1 = new Scanner(file);
+      while(input1.hasNext()){
+        String a = input1.nextLine();
+        if(a.contains("{")){
+        System.out.println(a);
+      }
+      }
+      input1.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
       //File not found what should you do?
