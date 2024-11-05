@@ -10,7 +10,8 @@ public class TriangleTester{
 
     System.out.println("---- TEST CASES----");
 
-    System.out.println(countTrianglesA("inputTri.txt") + " should print 2");
+    System.out.println(countTrianglesA("inputTri.txt") + " should print 2 at first");
+    System.out.println(countTrianglesB("inputTri2.txt") + " should print 2 at first");
 }
 
   public static int countTrianglesA(String filename){
@@ -34,17 +35,24 @@ public class TriangleTester{
       Scanner a = new Scanner(file);
       int ans = 0;
       while(a.hasNextLine()){
+        Scanner x = new Scanner(a.nextLine());
+        Scanner y = new Scanner(a.nextLine());
+        Scanner z = new Scanner(a.nextLine());
+/* 
         String x = a.nextLine();
         String y = a.nextLine();
         String z = a.nextLine();
+        */
         for(int j = 0; j < 3; j++){
           if (isTriangle(x.nextInt(), y.nextInt(), z.nextInt())) ans++;
         }
         a.hasNextLine();
         a.hasNextLine();
       }
+      return ans;
     }catch(FileNotFoundException ex){
-      System.out.println("File not found")
+      System.out.println("File not found");
+      return -1;
     }
   }
 
