@@ -11,7 +11,7 @@ public class TriangleTester{
     System.out.println("---- TEST CASES----");
 
     System.out.println(countTrianglesA("inputTri.txt") + " should print 2 at first");
-    System.out.println(countTrianglesB("inputTri2.txt") + " should print 2 at first");
+    System.out.println(countTrianglesB("inputTri.txt") + " should print 2 at first");
 }
 
   public static int countTrianglesA(String filename){
