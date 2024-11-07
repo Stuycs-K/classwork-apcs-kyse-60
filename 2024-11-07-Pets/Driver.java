@@ -8,4 +8,7 @@ public class Driver{
     System.out.println(b.getName() + " should return something with Mighty");
     System.out.println(a.getName() + " should not return something with Mighty");
   }
+
+  //Step 8 answer
+  //calling getName from a bird object uses the overridden method of getName method. However, calling getName from a Animal object uses the original getName method. 
 }
