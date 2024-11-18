@@ -10,9 +10,16 @@ public class Taxicab{
     try {
       File file = new File(filename);
       Scanner a = new Scanner(file);
-      int x = 0
-      int y = 0
-      String[]dir = a.split(",")
+      int x = 0;
+      int y = 0;
+      int facing = 0;
+      String[]dir = a.split(",");
+      for(int i = 0; i < dir.length(); i++){
+        if (dir[i].substring(0,1).equals("R")){
+          facing = (facing + 1) % 4;
+          x += 
+        }
+      }
       }
       return ans;
     } catch (FileNotFoundException ex) {
