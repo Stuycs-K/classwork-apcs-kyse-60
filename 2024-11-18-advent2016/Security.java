@@ -10,24 +10,8 @@ public class Security{
     public static void main(String[] args) {
         System.out.println(sumSector("input.txt."));
       }
-
-    public static String combine(String[] a){
-        String ans ="";
-        for (int i = 0; i < a.length - 1; i++){
-            ans += a[i];
-        }
-        return ans;
-    }
-
-    public static String topFive( ArrayList<String[]> a){
-        ArrayList<String[]> newarry = new ArrayList<String[]>();
-        String ans = "";
-        while(a.length > 0){
-            
-        }
-    }
     
-    public static ArrayList<String[]> sumSector(String filename){
+    public static int sumSector(String filename){
         try {
           File file = new File(filename);
           Scanner a = new Scanner(file);
@@ -36,22 +20,22 @@ public class Security{
             int sectorID = Integer.parseInt((dir[dir.length-1]).substring(0,3));
             String checksum = (dir[dir.length-1]).substring(4,9);
             
-            char[] characters= combine(dir).toCharArray();
+            char[] characters= combine(dir).toCharArray();     // this includes the [asdkasdas] code make sure u change it
             Arrays.sort(characters);
-            ArrayList<String[]> results = new ArrayList<String[]>();
-            while(characters.length > 0){
-                int counter = 1;
-                int i = 0; 
+            String [][] results = new String[26][2];            // ASCII EXISTS make a 1d array of ints[26] 0 corresponds to 'a'
+            for(int i = 0; characters.length > 0; i++){
+                int count = 1;
                 while(characters[i] == (characters[i+1])){
-                    counter ++ ;
                     i ++;
                 }
+                results[i][0] = 
                 String[] arry = { counter + "" , characters[0] + ""};
                 results.add(arry);
                 characters = Arrays.copyOfRange(characters, i + 1, characters.length);
             }
 
             }
+            return null; 
             a.close();
           }catch (FileNotFoundException ex) {
           System.out.println("File not found" + filename);

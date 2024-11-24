@@ -9,40 +9,43 @@ public class signals{
     System.out.println(Decode("input.txt."));
   }
 
-  public static String maxoflist(ArrayList<character> a){
-    ArrayList<Character , Integer> answer = new ArrayList<Character , Integer>();
-    for( int i = 0 ; i < a.size(); i++){
-        
+  public static int maxoflist(int[] list){
+    int max = 0;
+    int maxindex = 0;
+    for(int i = 0; i < list.length; i++){
+      if (list[i] > max){
+        max = list[i];
+        maxindex = i;
+      } 
     }
+    return maxindex;
   }
 
-  public static String findMax(Scanner scan , int index){
-    ArrayList<character> result = new ArrayList<character>();
-
+  public static char findMax(Scanner scan , int index){
+    int[] count = new int[26];
     while( scan.hasNextLine()){
         String a = scan.nextLine();
-        if(index != a.length()-1 ){
-            result.add(a.substring(index,index + 1));
-        }
-        else result.add(a.substring(a.length()-1));
+        for( int i = 0; i < 26; i ++){
+          char character = (char) (i + 97);
+          if (a.charAt(index) == character) count[i]++;
+          }
     }
-
-
+    char ans = (char)(maxoflist(count) + 'a');
+    return ans;
   }
 
   public static String Decode(String filename){
     try {
       File file = new File(filename);
       Scanner a = new Scanner(file);
+      String ans = "";
       for (int i = 0; i < a.nextLine().length(); i++){
         Scanner b = new Scanner(file);
-
+        ans += findMax(b, i);
       }
-
-      
       
       a.close();
-      return null;
+      return ans;
     }catch (FileNotFoundException ex) {
       System.out.println("File not found" + filename);
       return "no";
