@@ -24,7 +24,7 @@ public class ColorDemo{
         //System.out.println("now its red");
         System.out.println("\u001b[0m");
         System.out.println("set back to normal");
-        /* 
+        
         for(int r = 0; r < 256; r+=32){
             for(int g = 0; g <= 256; g+=32){
               for(int b = 0; b <= 256; b+=32){
@@ -33,6 +33,6 @@ public class ColorDemo{
             }
               System.out.println();
           }
-              */
+              
     }
 }
