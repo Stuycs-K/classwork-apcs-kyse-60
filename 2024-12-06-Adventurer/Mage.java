@@ -1,7 +1,7 @@
 public class Mage extends Adventurer{
     private int mana;
     private int manaMax;
-
+    
     public Mage(String name){
         super(name);
         this.mana = 10;
@@ -31,30 +31,30 @@ public class Mage extends Adventurer{
     }
 
     public String attack( Adventurer other){
-        int damage = (int) (Math.random() * 11 + 20);
+        int damage = (int) (Math.random() * 11 + 20); // if you add two randoms you can make it into a normal distribution ish  ( the middle values will be more likely and extremes less likely)
         other.applyDamage(damage);
-        return this.getName() + " summons 20  tacos to attack " + other.getName() + ", " + other.getName() + " loses " + damage + " hp";
+        return this + " summons 20  tacos to attack " + other + ", " + other + " loses " + damage + " hp";
     }
 
     public String support(Adventurer other){
         int heal = (int) (Math.random() * 6 - 10);
         other.applyDamage(heal);
-        return this.getName() + " uses the power of the light of a lava lamp to heal " + other.getName() + ", " + other.getName() + " gains " + Math.abs(heal) + " hp";
+        return this + " uses the power of the light of a lava lamp to heal " + other + ", " + other + " gains " + Math.abs(heal) + " hp";
     }
     
 
     public String support(){
         int heal = (int) (Math.random() * 6 - 10);
         this.applyDamage(heal);
-        return this.getName() + " uses the power of 5 singing sheep to heal " + Math.abs(heal) + " hp";
+        return this + " uses the power of 5 singing sheep to heal " + Math.abs(heal) + " hp";
     }
 
     public String specialAttack(Adventurer other){
-        if (getSpecial() > 0 ) setSpecial(getSpecial() - 1);
+        if (getSpecial() > 0 ) setSpecial(getSpecial() - 1); // if none than just do normal (design choice)
         else return "insufficient mana";
         int damage = (int) (Math.random() * 11 + 40);
-        other.applyDamage(damage);
-        return this.getName() + " uses alignment of 16 stars to summon a star beam on " + other.getName() + " dealing " + damage + " damage";
+        other.applyDamage(damage); 
+        return this + " uses alignment of 16 stars to summon a star beam on " + other + " dealing " + damage + " damage"; 
     }
 
 }
