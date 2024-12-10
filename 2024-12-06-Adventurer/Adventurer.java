@@ -1,4 +1,3 @@
-import java.util.Random;
 public abstract class Adventurer{
   private String name;
   private int HP,maxHP;
@@ -7,7 +6,7 @@ public abstract class Adventurer{
   /*There is no no-arg constructor. Be careful with your subclass constructors.*/
 
   public Adventurer(String name){
-      this(name, 100);
+      this(name, 10);
   }
 
   public Adventurer(String name, int hp){
